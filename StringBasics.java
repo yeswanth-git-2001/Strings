@@ -42,5 +42,18 @@ public class StringBasics{
         String name6 = "yeswanth";
         //The above string will directly go and creates in String Constant Pool and will have reference name6
 
+        String name7 = new String("chandu");
+        String name8 = new String("chandu");
+        //Here in the above code, name7 object will create in heap area and stringconstantpool
+        //Again name8 is created in the heap area, but in the stringconstantpool already one string is available with same name => in SCP duplicates are not allowed
+        //But in heap area it will create the string object with the reference
+
+        System.out.println(name7 == name8); //the equal to operator will check the references are pointing to the same object or not it will result in false, two references are pointing to two different objects
+
+        String name9 = "chandu";
+        String name10 = "chandu";
+        System.out.println(name9 == name10);
+        //Observe the above code already in string pool same string object name with chandu is created, in SCP duplicates are not allowed, so directly the name9 and name10 will referring to the SCP constant chandu
+        //The above comparision will result in true
     }
 }
