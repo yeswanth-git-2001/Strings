@@ -104,5 +104,35 @@ public class StringBasics {
         String s16 = "Chandrikachereddy";//this was direct literal and will create directly in SCP and will directly point to the intern() method created string
         System.out.println(s15 == s16);//this will result in true 
 
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        String s17 = new String();//creates an empty string;
+        String s18 = new String("Yeswanth chowdary chunchu");//creates a string in SCP and heap
+        
+        String s20 = s18.intern();
+        String s19 = "Yeswanth chowdary chunchu";
+        System.out.println("The s19 string will directly point to the s18 string which is created in SCP : " + (s19 == s20));
+
+        char[] ch = {'a','b','c','d'};//creates a character array
+        String s21 = new String(ch);//passing the character array to the string, then it will create a string in heap and the string pool, refer the below code for confirmation
+        String s22 = s21.intern();
+        String s23 = "abcd";
+        System.out.println(s22 == s23);
+
+        byte[] b = {65, 66, 67, 68, 69};//create a byte array
+        String s24 =new String(b);//passing the byte array to the string and internally the ASCII value will be taken, refer the below code for confirmation
+        String s25 = s24.intern();
+        String s26 = "ABCDE";
+        System.out.println(s25 == s26);
+
+        String s27 = new String("Babu Gouda");
+        char ch1 = s27.charAt(7);//this method will return the character at the index
+        //If you try to use indexing like in arrays, it will throw an error
+        System.out.println("character at index 6 : " + ch1);
+
+        String s28 = new String("Dasharatha");
+        int len = s28.length();//this will return the length of the string
+        //length is property for arrays, you will get the length using this property
+        //But the length() is method which you will get in case of strings
+        System.out.println("Length of the string : " + len);
     }
 }
