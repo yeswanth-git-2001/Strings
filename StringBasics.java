@@ -134,5 +134,54 @@ public class StringBasics {
         //length is property for arrays, you will get the length using this property
         //But the length() is method which you will get in case of strings
         System.out.println("Length of the string : " + len);
-    }
+
+        String s29 = "chunchu";
+        String s30 = "chunchu";
+        System.out.println(s29 == s30);// == this will compare that, if both the references are referring to the same objcet
+
+        String s31 = "Chunchu yash chowdary";
+        String s32 = new String("Chunchu yash chowdary");
+        System.out.println(s31.equals(s32));//equals metod will compare the content of the strings
+        //incase of the equals method, if the string in the parameter of the equals method will check case also, which means if the string is exact match, whether it was uppercase or lowercase, it will return the true
+
+        //if you want to ignore the case you can use the equalsIgnoreCase
+        System.out.println(s32.equalsIgnoreCase("CHUNCHU YASH CHOWDARY"));//in this case it will ignore the case and return the boolean value true
+
+        String s33 = "YeswanthChowdaryChunchu";
+        System.out.println(s33.substring(16));//If you enter the strting index of the string you want, from there it will give the substring
+        System.out.println(s33.substring(0, 16));//here you can mention the ending index also[here ending index - 1 ] will be printed
+        
+
+        String s34 = "yash";
+        System.out.println(s34.replace('a', 'e'));//It can replace the old character with new character
+        System.out.println(s34);
+        //If old character is not present, iT will do nothing
+        String s35 = "yashchunchu";
+        System.out.println(s35.replace('c', 'h'));//It can change the multiple occurances of the old character
+        System.out.println(s35);
+
+        String s36 = "YeSwAnTh";//Here the string will be SCP
+        System.out.println(s36.toLowerCase());//method invoked, which means, JVM will involved and a new string with all caps of s36 string will be created in heap
+        System.out.println(s36.toUpperCase());//method invoked, which means, JVM will involved and a new string with all lower case of s36 string will be created in heap
+
+        //Trim method will only remove the spaces before and after the string, if the space is in between the string, it wont be removed
+        String s37 = "yeswanth chowdary";
+        System.out.println(s37.length());
+        System.out.println(s37.trim());
+        System.out.println("----------------------------------------------------------------");
+        String s38 = "     yeswanth chowdary     ";//A new string will be created after trimming and will be Heap because, method involvement is there
+        System.out.println(s38.length());
+        String s39 = s38.trim();
+        System.out.println(s39.length());
+
+        //indexOf() method
+        String s41= "GowthamIChOwdary";
+        System.out.println(s41.indexOf('o'));//will gives the index of the samaller o in string
+        System.out.println(s41.indexOf('O'));//will gives the index of the capital O in string
+        //If repititions are there, it will result in first occuring index of the string    
+        //if you want the last index use onother method
+        System.out.println(s41.lastIndexOf('a'));
+        System.out.println(s41.indexOf('Z'));//if the character is not present, it will return the -1
+      }
+
 }
